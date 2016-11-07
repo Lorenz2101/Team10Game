@@ -2,7 +2,7 @@
 We are team 10 of the game competition challenge, making a game in Greenfoot for our teachers.
 
 Game idea v1:
-
+I made some changes, fuck it.
 Genre:
 -Sidescroller (like Mario)
 
