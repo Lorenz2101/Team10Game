@@ -1,3 +1,5 @@
+import greenfoot.*; // Imports the greenfoot library
+
 public class Ammo {
 
 	public int getPlayerAmmo() {

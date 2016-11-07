@@ -1,18 +1,25 @@
-public class Usable_items {
+import greenfoot.*; // Imports the greenfoot library
 
-	private int id;
-	private double timer;
-	private String name;
-	private String description;
-
-	public void getName() {
-		// TODO - implement Usableitems.getName
-		throw new UnsupportedOperationException();
-	}
-
-	public void getDescription() {
-		// TODO - implement Usableitems.getDescription
-		throw new UnsupportedOperationException();
-	}
-
+public class Usable_items extends Actor {
+    
+    private int id;
+    private double timer;
+    private String name;
+    private String description;
+    
+    /*
+     * Returns name
+     */
+    public void getName() {
+        return name;
+    }
+    
+    
+    /*
+     * Returns description
+     */
+    public void getDescription() {
+        return description;
+    }
+    
 }

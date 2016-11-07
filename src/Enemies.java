@@ -1,25 +1,37 @@
-public class Enimies {
+import greenfoot.*; // Imports the greenfoot library
 
-	private int speed;
-	private int health;
-	private int damage;
-
-	public void getHealth() {
-		// TODO - implement Enimies.getHealth
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * 
-	 * @param health
-	 */
-	public void setHealth(int health) {
-		this.health = health;
-	}
-
-	public Enimies() {
-		// TODO - implement Enimies.Enimies
-		throw new UnsupportedOperationException();
-	}
-
+public class Enemies extends Actor {
+    
+    private int speed;
+    private int health;
+    private int damage;
+    
+    /**
+     * Returns health
+     */
+    public int getHealth() {
+        return health;
+    }
+    
+    
+    /**
+     * Sets the health
+     * @param Health
+     */
+    public void setHealth(int health) {
+        this.health = health;
+    }
+    
+    
+    /**
+     * Enemies constructor
+     * @param speed, health, damage
+     */
+    public Enemies(int speed, int health, int damage) {
+        // Set the speed, health and damage
+        this.speed = speed;
+        this.health = health;
+        this.damage = damage;
+    }
+    
 }
