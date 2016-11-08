@@ -1,8 +1,7 @@
-public class Currency {
+import greenfoot.*; // Imports the greenfoot library
 
-	public int getPlayerCurrency() {
-		// TODO - implement Currency.getPlayerCurrency
-		throw new UnsupportedOperationException();
-	}
-
+public class Currency extends Actor {
+    
+    // Tilføj en model/billede
+    
 }

@@ -1,10 +1,20 @@
-public class Crate {
+import greenfoot.*; // Imports the greenfoot library
+import java.util.ArrayList;
+import java.util.List;
 
-	private O usable_items;
-
-	private void dropRandomItem() {
-		// TODO - implement Crate.dropRandomItem
-		throw new UnsupportedOperationException();
-	}
-
+public class Crate extends Actor {
+    
+    List<usable_items> usableitem;
+    
+    
+    public Crate() {usableitem = new ArrayList();}
+    
+    
+    /**
+     * Drops a random item when the crate is destroyed
+     */
+    private void dropRandomItem() {
+        
+    }
+    
 }
