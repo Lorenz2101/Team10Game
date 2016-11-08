@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=MyWorld()
+comment2.params=
+comment2.target=void\ addTiles()
+comment2.text=\r\n\ Creates\ tiles\ for\ building\ your\ world.\r\n
+comment3.params=
+comment3.target=void\ addEnemies()
+comment3.text=\r\n\ Creates\ enemies.\r\n
+comment4.params=
+comment4.target=Player\ getPlayer()
+comment5.params=
+comment5.target=ScrollController\ getTheScroll()
+numComments=6
