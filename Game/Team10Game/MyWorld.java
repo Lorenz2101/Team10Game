@@ -14,7 +14,6 @@ public Player thePlayer;
 public ScrollController theScroll;
 
 private int imageCount = 0;
- 
 private GreenfootImage bgImage = new GreenfootImage("o.jpg");
 
  
@@ -36,7 +35,7 @@ private GreenfootImage bgImage = new GreenfootImage("o.jpg");
     
     public MyWorld()
     {    
-        super(600, 400, 1, false); //The extra 'false' parameter means that the world is unbounded.
+        super(3000, 400, 1, false); //The extra 'false' parameter means that the world is unbounded.
         
         addTiles();
         addEnemies();
@@ -48,18 +47,80 @@ private GreenfootImage bgImage = new GreenfootImage("o.jpg");
     }
     
     /**
-     * Creates tiles for building your world.
+     * Creates the world.
      */
     public void addTiles()
-    {
-   
-        for(int i=0;i<20;i++)
+    {   
+        for(int i=1;i<20;i++)
         {
             addObject(new grass_tile(), i*30-15, 415);
-            addObject(new grass_tile(), 675, 200); // This was just to clarify it's possible to create a world.
-            addObject(new grass_tile(), 5000, 200); // Same with this.
+        }
+        
+        for(int i=0;i<3;i++)
+        {
+            addObject(new grass_tile(), 560+(i*30), 375);
+        }
+        
+        for(int i=0;i<6;i++)
+        {
+            addObject(new grass_tile(), 650+(i*30), 335);
+        }
+       
+        for(int i=0;i<5;i++)
+        {
+            addObject(new grass_tile(), 830+(i*30), 375);
+        }
+        
+        for(int i=1;i<10;i++)
+        {
+            addObject(new grass_tile(), 950+(i*30), 415);
+        }
+        
+        for(int i=1;i<3;i++)
+        {
+            addObject(new grass_tile(), 1220+(i*30), 375);
+        }
+           
+        addObject(new grass_tile(), 1310, 335);
+        addObject(new grass_tile(), 1340, 335);
+        
+        addObject(new grass_tile(), 1370, 295);
+        addObject(new grass_tile(), 1400, 295);
+        
+        addObject(new grass_tile(), 1430, 415);
+        addObject(new grass_tile(), 1460, 415);
+        
+        for(int i=1;i<15;i++)
+        {   
+            addObject(new grass_tile(), 1430+(i*30), 415);
+        }
+        
+        for(int i=1;i<12;i++)
+        {
+            addObject(new grass_tile(), 1850+(i*30), 375);
+        }
+        
+        for(int i=1;i<8;i++)
+        {
+            addObject(new grass_tile(), 2180+(i*30), 415);
+        }
+        
+        for(int i=1;i<5;i++)
+        {
+            addObject(new grass_tile(), 2390+(i*30), 375);
+        }
+        
+        for(int i=1;i<5;i++)
+        {
+            addObject(new grass_tile(), 2510+(i*30), 335);
+        }
+    
+         for(int i=1;i<13;i++)
+        {
+            addObject(new grass_tile(), 2630+(i*30), 375);
         }
     }
+    
     
     /**
      * Creates enemies.

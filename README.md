@@ -13,10 +13,10 @@ Objects:
 -Player
 -Worlds (levels)
 -Enemies
-  -Boss
+  -Boss (Maybe the goal of the game)
 -Usable items
   -Consumables
-  -Perks
+  -Perks (Upgrades)
 -Destructable items/environment
 	-Infamous red explosive barrel
 	-Crate (ammo/currency/items/consumables/enemies)
