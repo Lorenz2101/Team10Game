@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=ScrollController
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ ScrollController\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=void\ act()
+comment2.params=minX\ maxX
+comment2.target=void\ updateShouldScroll(int,\ int)
+comment2.text=\r\n\ This\ method\ checks\ the\ players\ x\ position\ and\ sets\ the\ shouldScroll\ boolean\ accordingly.\r\n\ @param\ The\ x\ value\ limits\ within\ which\ scrolling\ is\ not\ required\ for\ left/right\ movement.\r\n
+comment3.params=
+comment3.target=boolean\ getScrolll()
+numComments=4

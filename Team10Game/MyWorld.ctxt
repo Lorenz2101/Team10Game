@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.target=MyWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=MyWorld()
+comment1.text=public\ void\ act()\ {\r\n\ \ \ \ if\ (theScroll.getScrolll())\ {\r\n\ \ \ \ imageCount\ -\=\ 5;\ //(or\ any\ other\ value;\ small\ ->\ slow\ moving,\ big\ ->\ fast\ movement)\r\n\ \ \ \ drawBackgroundImage();\r\n\ \ \ \ }\r\n\ \ \ \ \r\n\ \ \ \ }\r\n\r\n\ \ \ \ public\ void\ drawBackgroundImage()\ {\r\n\ \ \ \ if\ (imageCount\ >\ bgImage.getWidth())\ {\r\n\ \ \ \ imageCount\ +\=\ bgImage.getWidth();\r\n\ \ \ \ }\r\n\ \ \ \ int\ temp\ \=\ imageCount;\r\n\ \ \ \ getBackground().drawImage(bgImage,\ temp,\ 0);\r\n\ \ \ \ getBackground().drawImage(bgImage,\ temp\ +\ bgImage.getWidth(),\ 0);\r\n\ \ \ \ }\r\n
+comment2.params=
+comment2.target=void\ addTiles()
+comment2.text=\r\n\ Creates\ the\ world.\r\n
+comment3.params=
+comment3.target=void\ addEnemies()
+comment3.text=\r\n\ Creates\ enemies.\r\n
+comment4.params=
+comment4.target=Player\ getPlayer()
+comment5.params=
+comment5.target=ScrollController\ getTheScroll()
+comment6.params=
+comment6.target=void\ prepare()
+comment6.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
+numComments=7
