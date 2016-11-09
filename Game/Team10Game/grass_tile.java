@@ -28,4 +28,5 @@ public class grass_tile extends Others
         grass.scale(width, height);
         setImage(grass);
     }
+
 }

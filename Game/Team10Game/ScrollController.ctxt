@@ -6,4 +6,6 @@ comment1.target=void\ act()
 comment2.params=minX\ maxX
 comment2.target=void\ updateShouldScroll(int,\ int)
 comment2.text=\r\n\ This\ method\ checks\ the\ players\ x\ position\ and\ sets\ the\ shouldScroll\ boolean\ accordingly.\r\n\ @param\ The\ x\ value\ limits\ within\ which\ scrolling\ is\ not\ required\ for\ left/right\ movement.\r\n
-numComments=3
+comment3.params=
+comment3.target=boolean\ getScrolll()
+numComments=4

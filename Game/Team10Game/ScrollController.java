@@ -38,6 +38,10 @@ public class ScrollController extends Actor
         if(shouldScroll == true && (playerX >= 400 && Greenfoot.isKeyDown("left")) || (playerX <= 200 && Greenfoot.isKeyDown("right")))
         {
             shouldScroll = false;
-        }
+        } 
+    }
+    
+    public boolean getScrolll() {
+    return shouldScroll;
     }
 }

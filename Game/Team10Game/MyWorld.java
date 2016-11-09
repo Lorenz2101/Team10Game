@@ -1,4 +1,6 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Write a description of class MyWorld here.
@@ -7,18 +9,38 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @version (a version number or a date)
  */
 public class MyWorld extends World {
-    public Player thePlayer;
-    public ScrollController theScroll;
+public Player thePlayer;
+    
+public ScrollController theScroll;
+
+private int imageCount = 0;
+ 
+private GreenfootImage bgImage = new GreenfootImage("o.jpg");
+
+ 
+   public void act() {
+   if (theScroll.getScrolll()) {
+    imageCount -= 5; //(or any other value; small -> slow moving, big -> fast movement)
+    drawBackgroundImage();
+   }
+   }
+ 
+    public void drawBackgroundImage() {
+    if (imageCount > bgImage.getWidth()) {
+        imageCount += bgImage.getWidth();
+    }
+    int temp = imageCount;
+    getBackground().drawImage(bgImage, temp, 0);
+    getBackground().drawImage(bgImage, temp + bgImage.getWidth(), 0);
+   }
     
     public MyWorld()
     {    
         super(600, 400, 1, false); //The extra 'false' parameter means that the world is unbounded.
-       // GreenfootImage bg = new GreenfootImage("o.jpg");
-       // bg.scale(getWidth(), getHeight());
-       // setBackground(bg);
         
         addTiles();
         addEnemies();
+        setBackground("o.jpg");
         thePlayer = new Player();
         addObject(thePlayer, 300, 100); //Creates the player.
         theScroll = new ScrollController();
@@ -30,9 +52,12 @@ public class MyWorld extends World {
      */
     public void addTiles()
     {
-        for(int i=1;i<100;i++)
+   
+        for(int i=0;i<20;i++)
         {
-            addObject(new grass_tile(), i*30-15, 370);
+            addObject(new grass_tile(), i*30-15, 415);
+            addObject(new grass_tile(), 675, 200); // This was just to clarify it's possible to create a world.
+            addObject(new grass_tile(), 5000, 200); // Same with this.
         }
     }
     
@@ -48,6 +73,7 @@ public class MyWorld extends World {
     {
         return thePlayer;
     }
+    
     
     public ScrollController getTheScroll()
     {
