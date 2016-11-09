@@ -10,12 +10,13 @@ import java.util.List;
  */
 public class MyWorld extends World {
 public Player thePlayer;
-    
+
 public ScrollController theScroll;
 
 private int imageCount = 0;
+
  
-private GreenfootImage bgImage = new GreenfootImage("o.jpg");
+  private GreenfootImage bgImage = new GreenfootImage("o.jpg");
 
  
    public void act() {
@@ -52,7 +53,8 @@ private GreenfootImage bgImage = new GreenfootImage("o.jpg");
      */
     public void addTiles()
     {
-   
+        
+        
         for(int i=0;i<20;i++)
         {
             addObject(new grass_tile(), i*30-15, 415);

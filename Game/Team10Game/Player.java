@@ -12,12 +12,21 @@ public class Player extends ScrollController
    private int life;
    private int speed;
    private int heart;
+   
+   private int currency; 
  
-   private GifImage gifImage = new GifImage("black.gif");;
+   private GifImage runRight = new GifImage("runRight.gif");
+   private GifImage runLeft = new GifImage("runLeft.gif");
+   
+   
    public Player() {
    life = 3;
    speed = 3;
-   heart = 3;   
+   heart = 3;  
+
+   currency = 50;
+   
+   setImage(runRight.getCurrentImage());
    
    }
     
@@ -29,7 +38,10 @@ public class Player extends ScrollController
         // Kills the player on fall.
         deathOnFall();
         
-        setImage(gifImage.getCurrentImage());
+        // Removes the coin and get +1 currency.
+        pickUpCoin();
+        
+        
         
     }
     
@@ -44,10 +56,14 @@ public class Player extends ScrollController
         if(Greenfoot.isKeyDown("left") && theScroll.shouldScroll == false)
         {
             setLocation(getX() - speed, getY());
+            setImage(runLeft.getCurrentImage());
         }
         else if(Greenfoot.isKeyDown("right") && theScroll.shouldScroll == false)
         {
-           setLocation(getX() + speed, getY());            
+           setLocation(getX() + speed, getY());       
+           setImage(runRight.getCurrentImage());
+        } else {
+            setImage("standStill.png");
         }
         
         if(!isTouching(grass_tile.class)){
@@ -83,7 +99,21 @@ public class Player extends ScrollController
     setLocation(300, 0);
     life --;
     }
+}
+    
+    private void pickUpCoin() {
+    
+    if(isCoin()) {
+    removeTouching(Currency.class);
+    currency ++;
     }
+    }
+    
+    private boolean isCoin() {
+    Actor coin = getOneObjectAtOffset(15, 15, Currency.class);
+    return (coin != null);
+    }
+   
     
 
 }
