@@ -3,16 +3,8 @@ import greenfoot.*; // Imports the greenfoot library
 public class Enemies extends Actor {
     
     private int speed;
-    private int health;
     private int damage;
-    
-    /**
-     * Returns health
-     */
-    public int getHealth() {
-        return health;
-    }
-    
+       
     
     /**
      * Sets the health
@@ -27,11 +19,10 @@ public class Enemies extends Actor {
      * Enemies constructor
      * @param speed, health, damage
      */
-    public Enemies(int speed, int health, int damage) {
+    public Enemies() {
         // Set the speed, health and damage
-        this.speed = speed;
-        this.health = health;
-        this.damage = damage;
+        speed = 3
+        damage = 1;
     }
     
 }

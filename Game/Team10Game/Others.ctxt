@@ -1,15 +1,15 @@
 #BlueJ class context
 comment0.target=Others
-comment0.text=\r\n\ The\ superclass\ of\ all\ actors\ that\ need\ to\ scroll\ (i.e.\ all\ the\ actors\ except\ Player)\r\n\ \r\n\ @author\ Bertie\ Wheen\r\n\ @version\ 0.1\r\n
+comment0.text=\n\ The\ superclass\ of\ all\ actors\ that\ need\ to\ scroll\ (i.e.\ all\ the\ actors\ except\ Player)\n\ \n\ @author\ Bertie\ Wheen\n\ @version\ 0.1\n
 comment1.params=
 comment1.target=Others()
 comment2.params=
 comment2.target=void\ setLocation()
-comment2.text=\r\n\ Used\ for\ setting\ the\ actor's\ location.\r\n
+comment2.text=\n\ Used\ for\ setting\ the\ actor's\ location.\n
 comment3.params=amount
 comment3.target=void\ checkKeyPress(int)
-comment3.text=\r\n\ This\ is\ used\ for\ responding\ to\ keyboard\ input\ by\ the\ user.\r\n\ This\ will\ only\ happen\ when\ the\ player\ is\ far\ enough\ to\ the\ left\ or\ right\ of\ the\ screen\ for\ scrolling\ to\ be\ needed.\r\n\ @param\ How\ fast\ the\ scrolling\ should\ be.\ 3-4\ is\ recommended.\ If\ a\ negative\ value\ is\ used,\ the\ controls\ will\ be\ inverted.\r\n
+comment3.text=\n\ This\ is\ used\ for\ responding\ to\ keyboard\ input\ by\ the\ user.\n\ This\ will\ only\ happen\ when\ the\ player\ is\ far\ enough\ to\ the\ left\ or\ right\ of\ the\ screen\ for\ scrolling\ to\ be\ needed.\n\ @param\ How\ fast\ the\ scrolling\ should\ be.\ 3-4\ is\ recommended.\ If\ a\ negative\ value\ is\ used,\ the\ controls\ will\ be\ inverted.\n
 comment4.params=
 comment4.target=void\ scrollingMethods()
-comment4.text=\r\n\ A\ call\ to\ the\ following\ should\ be\ in\ all\ scrolling\ actor's\ act\ methods.\r\n
+comment4.text=\n\ A\ call\ to\ the\ following\ should\ be\ in\ all\ scrolling\ actor's\ act\ methods.\n
 numComments=5
