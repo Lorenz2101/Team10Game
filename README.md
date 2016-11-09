@@ -27,3 +27,4 @@ Objects:
 	-Lifebar
 	-Currency
 	-Ammo
+d
