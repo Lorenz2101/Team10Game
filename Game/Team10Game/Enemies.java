@@ -12,8 +12,6 @@ public class Enemies extends Others
     
     public Enemies(String EnemyImage) {
      Enemy = new GifImage(EnemyImage);
-    
-    
     }
     /**
      * Act - do whatever the Enemies wants to do. This method is called whenever
@@ -22,6 +20,10 @@ public class Enemies extends Others
     public void act() 
     {
         scrollingMethods();
+        
+        if(!isTouching(grass_tile.class)) {
+        setLocation(getX(), getY() + 3);
+        }
         setImage(Enemy.getCurrentImage());
         
     }    

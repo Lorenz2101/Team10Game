@@ -9,10 +9,10 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class Others extends ScrollController
 {
     public int scrollX; //The variable used when scrolling.
-    private Player Plr;
+    
 
     public Others()
-    {
+    {        
         scrollX = 0;
     }
 

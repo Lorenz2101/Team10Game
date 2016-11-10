@@ -12,6 +12,9 @@ public class ScrollController extends Actor
     public boolean shouldScroll; //A boolean to determine if scrolling is needed, according to how far left/right across the screen the player is.
     public int playerX; //The player's x value
     
+   private GifImage runRight = new GifImage("runRight.gif");
+   private GifImage runLeft = new GifImage("runLeft.gif");
+   
     public void act() 
     {
         updateShouldScroll(200, 400); //This should be in the act method so that the shouldScroll boolean is constantly updated.
@@ -27,9 +30,21 @@ public class ScrollController extends Actor
         MyWorld theWorld = (MyWorld) getWorld();
         Player player = (Player) theWorld.getPlayer();
         playerX = player.getX();
+        
         if(playerX <= minX || playerX >= maxX)
         {
+        
+        if(Greenfoot.isKeyDown("RIGHT")) {
+            player.setImage(runRight.getCurrentImage());
             shouldScroll = true;
+        } else if (Greenfoot.isKeyDown("LEFT")) {
+            player.setImage(runLeft.getCurrentImage());
+            shouldScroll = true;
+        } else {
+        shouldScroll = false;
+        }
+        
+        
         }
         else
         {
