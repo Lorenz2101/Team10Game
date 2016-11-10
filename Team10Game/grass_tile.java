@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class grass_tile extends Others
+public class grass_tile extends game_object
 {
     
     public grass_tile() {

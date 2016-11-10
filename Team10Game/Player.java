@@ -18,6 +18,17 @@ public class Player extends ScrollController
    private int heart;
    // Player coins
    private int currency; 
+   // x- and ySpeed
+   private int xSpeed;
+   private int ySpeed;
+   
+   
+   private int vSpeed = 0;
+   private int accelleration = 2;
+   private boolean jumping;
+   // Jump height
+   private int jumpStrength = 20;
+   
    
    List<Actor> myItems;
  
@@ -57,11 +68,15 @@ public class Player extends ScrollController
         
         // Picks up any usable item.
         pickUpUsableItem();
-  
+        
+        // Checks if the player is mid-air
+        checkFall();
+        
+        
         
         // Checks if player is touching a block.
         //InteractingEnvironment();
-        
+        checkForCollision();
     }
     
     /**
@@ -85,12 +100,118 @@ public class Player extends ScrollController
            setImage("standStill.png");
         }
         
-        if(!isTouching(grass_tile.class)){       
-        setLocation(getX(), getY() + 3);     
-        } 
+        if(Greenfoot.isKeyDown("space") && jumping == false) 
+        {
+            jump();
+        }
         
         
-       
+      
+    }
+    
+  
+    /**
+     * Makes the player fall
+     */
+    public void fall()
+    {
+       setLocation(getX(), getY() +vSpeed);
+       if (vSpeed <= 9)
+       {
+           vSpeed = vSpeed + accelleration;
+       }
+       jumping = true;
+    }
+    
+    
+    /**
+     * Checks if the player is on the ground 
+     */
+    public boolean onGround()
+    {
+        int spriteHeight = getImage().getHeight();
+        int lookForGround = (int) (spriteHeight/2) + 5;
+        Actor ground = getOneObjectAtOffset(0, lookForGround, grass_tile.class);
+        
+        if(ground == null)
+        {
+            jumping = true;
+            return false;
+        }
+        else
+        {
+            moveToGround(ground);
+            return true;
+        }
+        
+    
+    }
+    
+    /**
+     * Gravity
+     */
+    public void moveToGround(Actor ground)
+    {
+        int groundHeight = ground.getImage().getHeight();
+        int newY = ground.getY() - (groundHeight + getImage().getHeight())/2;
+        
+        setLocation(getX(), newY);
+        jumping = false;
+    }
+    
+    /**
+     * Checks if the player is falling (mid-air)
+     */
+    public void checkFall()
+    {
+        if (onGround())
+        {
+            vSpeed = 0;
+        }
+        else
+        {
+            fall();
+        }
+    }
+    
+    /**
+     * Makes the player jump
+     */
+    public void jump()
+    {
+        vSpeed = vSpeed - jumpStrength;
+        jumping = true;
+        fall();
+    }
+    
+    /**
+     * Checks for collision.
+     */
+    public void checkForCollision() {
+        // check below the actor
+        while(getOneObjectAtOffset(0, getImage().getHeight()/2+1, null)!=null)
+        {
+            setLocation(getX(), getY()-1); 
+            ySpeed=0;
+        }
+        // check above the actor
+        while(getOneObjectAtOffset(0, -getImage().getHeight()/2-1, null)!=null) 
+        {
+            setLocation(getX(), getY()+1);
+            ySpeed = 0;
+        }
+        // check to right of actor
+        while(getOneObjectAtOffset(getImage().getWidth()/2+1, 0, null)!=null)
+        {
+            setLocation(getX()-1, getY());
+            xSpeed = 0;
+        }
+        // check to left of actor
+        while(getOneObjectAtOffset(-getImage().getWidth()/2-1, 0, null)!=null)
+        {
+            setLocation(getX()+1, getY());
+            xSpeed = 0;
+        }
     }
     
     /**
@@ -111,8 +232,6 @@ public class Player extends ScrollController
     return currency;    
     }
     
-   
-    
     /**
      * Respawns the player on top of the map, so he can relocate himself.
      */
@@ -125,7 +244,7 @@ public class Player extends ScrollController
     life = 3;
     heart --;
     }
-}
+    }
 
     private void pickUpUsableItem() {
         if(isTouching(usable_items.class)) {
